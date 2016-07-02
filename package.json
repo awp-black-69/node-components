@@ -1,0 +1,21 @@
+{
+  "name": "node-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inedex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://awpblack69@bitbucket.org/awpblack69/node-components.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Vivek Brohma",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^15.2.0"
+  }
+}
