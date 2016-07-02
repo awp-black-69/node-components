@@ -1,0 +1,122 @@
+.dummy-select-mixin(@border-color; @border-highlight; @item-highlight; @shadow-color) {
+	.dummy-select {
+		&.active {
+			.selected-item {
+				border-color: @border-highlight;
+
+				.icon {
+					-webkit-transform: rotate3d(0, 0, 1, 180deg);
+					-moz-transform: rotate3d(0, 0, 1, 180deg);
+					-ms-transform: rotate3d(0, 0, 1, 180deg);
+					-o-transform: rotate3d(0, 0, 1, 180deg);
+					transform: rotate3d(0, 0, 1, 180deg);
+
+					&:before {
+						border-color: @border-highlight transparent;
+					}
+				}
+			}
+			.item-list-wrapper {
+				max-height: 110px;
+				opacity: 1;
+
+				ul.item-list {
+					top: 0;
+				}
+			}
+		}
+
+		.selected-item {
+			padding: 5px 10px;
+			position: relative;
+			border: solid @border-color;
+			border-width: 0 0 1px;
+
+			&:hover {
+				border-color: @border-highlight;
+
+				.icon {
+					&:before{
+						border-color: @border-highlight transparent;
+					}
+				}
+			}
+			.hint {
+				opacity: 0.4;
+
+				&.has-value {
+					opacity: 1;
+				}
+			}
+			.icon {
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				margin-top: -2px;
+				-webkit-transition: all 0.2s ease-out;
+				-moz-transition: all 0.2s ease-out;
+				-ms-transition: all 0.2s ease-out;
+				-o-transition: all 0.2s ease-out;
+				transition: all 0.2s ease-out;
+				transform-origin: 6px 2px;
+
+				&:before, &:after {
+					position: absolute;
+					display: block;
+					content: '';
+					border: solid;
+				}
+				&:before {
+					left: 0;
+					top: 0;
+					border-width: 6px 6px 0;
+					border-color: @border-color transparent;
+				}
+				&:after {
+					left: 0;
+					top: -2px;
+					border-width: 6px 6px 0;
+					border-color: white transparent;
+				}
+			}
+		}
+		.item-list-wrapper {
+			overflow: auto;
+			-webkit-box-shadow: 0 0 4px 0 @shadow-color;
+			-moz-box-shadow: 0 0 4px 0 @shadow-color;
+			box-shadow: 0 0 4px 0 @shadow-color;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			opacity: 0;
+			max-height: 0;
+
+			ul.item-list {
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				list-style: inside none;
+				position: relative;
+				top: -30px;
+				-webkit-transition: top 0.2s ease-out;
+				-moz-transition: top 0.2s ease-out;
+				-ms-transition: top 0.2s ease-out;
+				-o-transition: top 0.2s ease-out;
+				transition: top 0.2s ease-out;
+
+				li {
+					padding: 5px 10px;
+					cursor: default;
+					display: block;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+
+					&:hover {
+						background-color: @item-highlight;
+					}
+				}
+			}
+		}
+	}
+}
