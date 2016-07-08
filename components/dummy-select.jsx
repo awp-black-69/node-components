@@ -29,7 +29,7 @@ var DummySelect = React.createClass({
 		});
 
 		if(!oldSelectedItem || (oldSelectedItem.id != selectedItem.id)) {
-			this.props.onChange && this.props.onChange(selectedItem);
+			this.props.onChange && this.props.onChange(this.props.name, selectedItem);
 		}
 	},
 	getItemList: function () {

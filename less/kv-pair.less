@@ -1,0 +1,56 @@
+@import "../clear-mixin";
+
+.kv-pair-mixin (@color) {
+	.kv-pair-wrapper {
+		padding: 10px 0;
+		.row {
+			width: 100%;
+			padding-right: 40px;
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			> div {
+				float: left;
+
+				&.key-wrapper {
+					width: 45%;
+					padding-right: 10px;
+				}
+				&.value-wrapper {
+					width: 55%;
+					padding-left: 10px;
+				}
+			}
+			i.close-icon {
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				margin-top: -7px;
+
+				&:before, &:after {
+					width: 15px;
+					border: solid @color;
+					border-width: 0 0 2px;
+				}
+				&:before {
+					-webkit-transform: translate3d(0, 0, 1, 45deg);
+					-moz-transform: translate3d(0, 0, 1, 45deg);
+					-ms-transform: translate3d(0, 0, 1, 45deg);
+					-o-transform: translate3d(0, 0, 1, 45deg);
+					transform: translate3d(0, 0, 1, 45deg);
+				}
+				&:after {
+					-webkit-transform: translate3d(0, 0, -1, 45deg);
+					-moz-transform: translate3d(0, 0, -1, 45deg);
+					-ms-transform: translate3d(0, 0, -1, 45deg);
+					-o-transform: translate3d(0, 0, -1, 45deg);
+					transform: translate3d(0, 0, -1, 45deg);
+				}
+			}
+		}
+	}
+}

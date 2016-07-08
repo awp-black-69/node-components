@@ -1,0 +1,19 @@
+.tab-control-mixin(@primary-color) {
+	.tab-control {
+		.tabs {
+			.tab {
+				display: inline-block;
+				padding: 5px 10px;
+				border-bottom: 2px solid transparent;
+				cursor: default;
+
+				&.active {
+					border-color: @primary-color;
+				}
+			}
+		}
+		.tab-component-wrapper {
+			padding: 15px;
+		}
+	}
+}
