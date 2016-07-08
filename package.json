@@ -1,26 +1,27 @@
 {
-	"name": "node-components",
-	"version": "1.2.1",
-	"description": "",
-	"main": "inedex.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://awpblack69@bitbucket.org/awpblack69/node-components.git"
-	},
-	"keywords": [
-		"Node"
-	],
-	"author": "Vivek Brohma",
-	"browserify": {
-		"transform": [
-			"reactify"
-		]
-	},
-	"license": "ISC",
-	"devDependencies": {
-		"react": "^15.2.0"
-	}
+  "name": "node-components",
+  "version": "1.2.2",
+  "description": "",
+  "main": "inedex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://awpblack69@bitbucket.org/awpblack69/node-components.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Vivek Brohma",
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^15.2.0",
+    "underscore": "^1.8.3"
+  }
 }
