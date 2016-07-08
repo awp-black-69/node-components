@@ -12,6 +12,7 @@ var InputText = React.createClass({
 		this.setState({
 			isFocused: true
 		});
+		this.props.onFocus && this.props.onFocus(this.props.focusData);
 	},
 	blured: function () {
 		this.setState({
