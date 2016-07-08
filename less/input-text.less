@@ -1,0 +1,83 @@
+.dummy-input-text-mixin(@hint-text; @border; @border-highlight; @background-color: #FFF; @focus-highlight) {
+	.dummy-input-text {
+		width: 100%;
+		background-color: @background-color;
+		position: relative;
+
+		&.focused {
+			.focus-line {
+				width: 100%;
+				background-color: @focus-highlight;
+			}
+		}
+		&.has-text {
+			label.hint {
+				opacity: 0;
+			}
+		}
+		&.only-hint {
+			label.hint {
+				position: absolute;
+				top: 5px;
+				padding-left: 0;
+			}
+		}
+		&.focused, &.has-text {
+			&.only-hint {
+				label.hint {
+					top: 5px;
+				}
+			}
+			label {
+				left: 0;
+				top: 0;
+
+				&.hint {
+					top: 21px;
+					left: 10px;
+				}
+			}
+		}
+		label {
+			padding: 0 0 5px;
+			position: relative;
+			top: 21px;
+			left: 10px;
+			-webkit-transition: all 0.2s ease-out;
+			transition: all 0.2s ease-out;
+
+			&.hint {
+				color: @hint-text;
+				padding-left: 20px;
+			}
+		}
+		input {
+			padding: 5px 10px;
+			border: solid @border;
+			border-width: 0 0 1px;
+			outline: none;
+			width: 100%;
+			position: relative;
+			z-index: 1;
+			background-color: transparent;
+
+			&:hover {
+				border-color: @border-highlight;
+			}
+		}
+		.focus-line {
+			margin: 0 auto;
+			height: 2px;
+			width: 10%;
+			background-color: transparent;
+			position: relative;
+			top: -1px;
+			margin-bottom: -2px;
+			z-index: 1;
+
+			-webkit-transition: all 0.2s ease-out;
+			transition: all 0.2s ease-out;
+		}
+	}
+}
+

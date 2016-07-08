@@ -1,3 +1,4 @@
 module.exports = {
-	DummySelect: require('./components/dummy-select/dummy-select.jsx')
+	DummySelect: require('./components/dummy-select.jsx'),
+	InputText: require('./components/input-text.jsx')
 };
