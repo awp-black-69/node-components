@@ -58,7 +58,23 @@ var DummySelect = React.createClass({
 	},
 
 	componentDidMount: function () {
+		var self = this
+			,selectedItem;
+
 		document.addEventListener('click', this.collapseDropDown);
+
+		if(this.props.selectedId) {
+			selectedItem = _.find(this.props.data, function (data) {
+				return data.id = self.props.selectedId;
+			});
+		} else if(this.props.selectedIndex) {
+			selectedItem = this.props.data[this.props.selectedIndex];
+		}
+
+		this.setState({
+			selectedItem: selectedItem,
+			displayText: selectedItem && selectedItem.value
+		});
 	},
 	componentWillUnmount: function () {
 		document.removeEventListener('click', this.collapseDropDown);

@@ -1,5 +1,8 @@
 .dummy-select-mixin(@border-color; @border-highlight; @item-highlight; @shadow-color) {
 	.dummy-select {
+		position: relative;
+		cursor: default;
+
 		&.active {
 			.selected-item {
 				border-color: @border-highlight;
@@ -90,6 +93,10 @@
 			border-radius: 4px;
 			opacity: 0;
 			max-height: 0;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			background-color: #fff;
 
 			ul.item-list {
 				width: 100%;
