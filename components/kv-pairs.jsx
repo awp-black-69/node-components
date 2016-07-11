@@ -19,7 +19,7 @@ var KVPair = React.createClass({
 			kv[pair.key] = pair.value;
 		});
 
-		this.props.onChange(this.props.name, kv);
+		this.props.onChange && this.props.onChange(this.props.name, kv);
 	},
 	updateKey: function(index, value){
 		var pairs = this.state.pairs;
@@ -62,6 +62,8 @@ var KVPair = React.createClass({
 		this.setState({
 			pairs: pairs
 		});
+
+		this.hasChanged(pairs);
 	},
 	render: function(){
 		var self = this
