@@ -21,8 +21,10 @@ var TabControl = React.createClass({
 			,data = this.props.data;
 
 		return _.map(data, function (tab, index) {
+			var isActive = !_.contains(that.props.disabledTabs, tab.name);
+
 			return (
-				<div className={"tab" + (that.state.selectedTabIndex == index ? " active" : "")} key={tab.id} data-index={index} onClick={that.updateTab}>
+				<div className={"tab" + (that.state.selectedTabIndex == index ? " active" : "") + (!isActive ? " disabled" : "")} key={tab.id} data-index={index} onClick={isActive ? that.updateTab : null}>
 					{tab.text}
 				</div>
 			);
@@ -40,6 +42,28 @@ var TabControl = React.createClass({
 				</div>
 			);
 		});
+	},
+
+	componentWillUpdate: function (nextProp) {
+		var that = this
+			,selectedIndex = that.state.selectedTabIndex
+			,selectedTab
+			,isSelectedDisabled
+			,firstEnabledTab;
+
+		selectedTab = nextProp.data[selectedIndex];
+
+		isSelectedDisabled = _.contains(nextProp.disabledTabs, selectedTab.name);
+
+		if(isSelectedDisabled) {
+			firstEnabledTab = _.find(nextProp.data, function (tab) {
+				return !_.contains(nextProp.disabledTabs, tab.name)
+			});
+
+			this.setState({
+				selectedTabIndex: nextProp.data.indexOf(firstEnabledTab)
+			});
+		}
 	},
 
 	render: function () {
