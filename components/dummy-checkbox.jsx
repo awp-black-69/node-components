@@ -19,7 +19,7 @@ var DummyCheckbox = React.createClass({
 			isChecked: e.target.checked
 		});
 
-		this.props.onChange && this.props.onChange();
+		this.props.onChange && this.props.onChange(e);
 	},
 	initialChecked: function (props) {
 		this.setState({
