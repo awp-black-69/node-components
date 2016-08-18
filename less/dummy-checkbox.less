@@ -1,0 +1,91 @@
+.dummy-checkbox-mixin(@color) {
+	@size: 20px;
+	@time: 0.2s;
+	@graph: cubic-bezier(0.4,0,0.2,1);
+
+	.dummy-checkbox {
+		input[type=checkbox] {
+			display: none;
+
+			&:checked + label {
+				.selection {
+					border-color: @color;
+					-webkit-transition: all @time @graph;
+					-moz-transition: all @time @graph;
+					-ms-transition: all @time @graph;
+					-o-transition: all @time @graph;
+					transition: all @time @graph;
+				}
+				&:before, &:after {
+					-webkit-transition: width @time/2 @time/2 @graph;
+					-moz-transition: width @time/2 @time/2 @graph;
+					-ms-transition: width @time/2 @time/2 @graph;
+					-o-transition: width @time/2 @time/2 @graph;
+					transition: width @time/2 @time/2 @graph;
+				}
+				&:before {
+					width: 8px;
+				}
+				&:after {
+					width: 10px;
+				}
+				.selection {
+					border-width: 10px;
+				}
+			}
+		}
+		label {
+			width: @size;
+			height: @size;
+			display: inline-block;
+			position: relative;
+
+			&, & * {
+			}
+
+			.selection {
+				position: relative;
+				border: 2px solid #aaa;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				z-index: 1;
+				-webkit-transition: all @time @time/2 @graph;
+				-moz-transition: all @time @time/2 @graph;
+				-ms-transition: all @time @time/2 @graph;
+				-o-transition: all @time @time/2 @graph;
+				transition: all @time @time/2 @graph;
+			}
+			&:before, &:after {
+				display: block;
+				position: absolute;
+				content: '';
+				transform-origin: 0 50%;
+				background: #FFF;
+				z-index: 2;
+				-webkit-transition: width @time/2 @graph;
+				-moz-transition: width @time/2 @graph;
+				-ms-transition: width @time/2 @graph;
+				-o-transition: width @time/2 @graph;
+				transition: width @time/2 @graph;
+			}
+			&:before {
+				width: 2px;
+				height: 2px;
+				left: 9px;
+				top: 14px;
+				transform: rotate(-135deg);
+			}
+			&:after {
+				width: 2px;
+				height: 2px;
+				left: 9px;
+				top: 13px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
