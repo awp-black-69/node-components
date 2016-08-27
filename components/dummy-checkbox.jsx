@@ -21,18 +21,12 @@ var DummyCheckbox = React.createClass({
 
 		this.props.onChange && this.props.onChange(e);
 	},
-	initialChecked: function (props) {
-		this.setState({
-			isChecked: props.checked,
-			dumId: props.id || getRndId()
-		});
-	},
 
 	componentDidMount: function () {
-		this.initialChecked(this.props);
-	},
-	componentWillReceiveProps: function (nextProps) {
-		this.initialChecked(nextProps);
+		this.setState({
+			isChecked: this.props.checked,
+			dumId: this.props.id || this.state.dumId || getRndId()
+		});
 	},
 
 	render: function () {
