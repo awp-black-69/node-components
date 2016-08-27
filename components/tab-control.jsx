@@ -38,7 +38,7 @@ var TabControl = React.createClass({
 		return _.map(tabs, function (tab, index) {
 			return (
 				<div className="componet-wrapper" key={tab.id} id={tab.id} style={{display: (tabIndex==index ? "block" : "none")}}>
-					<tab.component {...tab.componentParams} name={tab.name} onChange={that.props.onChange} />
+					<tab.component {...tab.componentParams} name={tab.name} onChange={that.props.onChange} isActive={tabIndex == index} />
 				</div>
 			);
 		});
