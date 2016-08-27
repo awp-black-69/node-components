@@ -27,7 +27,19 @@ var InputText = React.createClass({
 
 		this.props.onChange && this.props.onChange(this.props.name, value);
 	},
+	updateValue: function (props) {
+		this.setState({
+			value: props.value
+		});
+	},
 
+
+	componentWillReceiveProps: function (nextProps) {
+		this.updateValue(nextProps)
+	},
+	componentDidMount: function () {
+		this.updateValue(this.props)
+	},
 	render: function () {
 		return (
 			<div className={"dummy-input-text" + (this.state.isFocused ? " focused" : "") + (this.state.value ? " has-text" : "") + (!this.props.label ? " only-hint" : "")}>
