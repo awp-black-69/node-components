@@ -1,6 +1,7 @@
-.tab-control-mixin(@primary-color) {
+.tab-control-mixin(@primary-color, @text-highlight: "", @tab-padding: 10px 10px 0, @content-padding: 15px 0) {
 	.tab-control {
 		.tabs {
+			padding: @tab-padding;
 			.tab {
 				display: inline-block;
 				padding: 5px 10px;
@@ -9,14 +10,18 @@
 
 				&.active {
 					border-color: @primary-color;
+					color: @text-highlight;
 				}
 				&.disabled {
 					opacity: 0.5;
 				}
+				&:hover {
+					color: @text-highlight;
+				}
 			}
 		}
 		.tab-component-wrapper {
-			padding: 15px 0;
+			padding: @content-padding;
 		}
 	}
 }
