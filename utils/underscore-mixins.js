@@ -1,4 +1,4 @@
-module.expports = {
+module.exports = {
 	at: function(obj, path, fallback){
 		if('undefined' === typeof obj || obj === null || 'undefined' === typeof path || path === null) return fallback;
 
