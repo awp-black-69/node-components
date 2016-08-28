@@ -14,6 +14,7 @@ var DummySelect = React.createClass({
 	selectItem: function (e) {
 		var currentTarget = e.currentTarget
 			,selectedItem
+			,selectedIndex
 			,oldSelectedItem;
 
 		oldSelectedItem = this.state.selectedItem;
@@ -29,7 +30,7 @@ var DummySelect = React.createClass({
 		});
 
 		if(!oldSelectedItem || (oldSelectedItem.id != selectedItem.id)) {
-			this.props.onChange && this.props.onChange(this.props.name, selectedItem);
+			this.props.onChange && this.props.onChange(this.props.name, selectedItem, (this.props.data || []).indexOf(selectedItem));
 		}
 	},
 	getItemList: function () {
@@ -56,25 +57,31 @@ var DummySelect = React.createClass({
 	stopPropagation: function (e) {
 		e.nativeEvent.stopImmediatePropagation();
 	},
+	updateSelected: function (props) {
+		var selectedItem;
 
-	componentDidMount: function () {
-		var self = this
-			,selectedItem;
 
-		document.addEventListener('click', this.collapseDropDown);
-
-		if(this.props.selectedId) {
-			selectedItem = _.find(this.props.data, function (data) {
-				return data.id = self.props.selectedId;
+		if(props.selectedId) {
+			selectedItem = _.find(props.data, function (data) {
+				return data.id = props.selectedId;
 			});
-		} else if(this.props.selectedIndex) {
-			selectedItem = this.props.data[this.props.selectedIndex];
+		} else if(undefined != props.selectedIndex) {
+			selectedItem = props.data[props.selectedIndex];
 		}
 
 		this.setState({
 			selectedItem: selectedItem,
 			displayText: selectedItem && selectedItem.value
 		});
+	},
+
+	componentWillReceiveProps: function (nextProps) {
+		this.updateSelected(nextProps);
+	},
+	componentDidMount: function () {
+		document.addEventListener('click', this.collapseDropDown);
+
+		this.updateSelected(this.props);
 	},
 	componentWillUnmount: function () {
 		document.removeEventListener('click', this.collapseDropDown);

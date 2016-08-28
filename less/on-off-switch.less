@@ -12,7 +12,11 @@
 		.switch {
 			padding: 5px 10px;
 			float: left;
+			cursor: default;
 
+			&:hover {
+				color: @color
+			}
 			&.selected {
 				background: @color;
 				color: @selected-font;

@@ -6,6 +6,14 @@ var OnOffSwitch = React.createClass({
 			isOn: true
 		};
 	},
+
+	toggleSwitch: function(e) {
+		// var isOn = e.target.classList.contains('on');
+		this.setState({
+			isOn: e.target.classList.contains('on')
+		});
+	},
+
 	componentDidMount: function() {
 		if(undefined != this.props.isOn) {
 			this.setState({
@@ -16,8 +24,8 @@ var OnOffSwitch = React.createClass({
 	render: function () {
 		return (
 			<div className="on-off-switch-wrapper">
-				<div className={"switch on" + (this.state.isOn ? " selected" : "")}>{this.props.onText}</div>
-				<div className={"switch off" + (!this.state.isOn ? " selected" : "")}>{this.props.offText}</div>
+				<div className={"switch on" + (this.state.isOn ? " selected" : "")} onClick={this.toggleSwitch}>{this.props.onText}</div>
+				<div className={"switch off" + (!this.state.isOn ? " selected" : "")} onClick={this.toggleSwitch}>{this.props.offText}</div>
 			</div>
 		);
 	}
