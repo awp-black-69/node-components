@@ -1,4 +1,4 @@
-# node-components
+# foo-lib
 
 Collection of Node components to be used in different project
 
@@ -8,6 +8,6 @@ Collection of Node components to be used in different project
 
 # Working in local
 
-Any change in component here would require you to do a `npm update node-component` everytime.
+Any change in component here would require you to do a `npm update foo-lib` everytime.
 
-To solve this use `npm link` inside "node-components" and do a `npm link node-components` inside your project.
+To solve this use `npm link` inside "foo-lib" and do a `npm link foo-lib` inside your project.
