@@ -15,6 +15,8 @@ var TabControl = React.createClass({
 		this.setState({
 			selectedTabIndex: index
 		});
+
+		this.props.onChange && this.props.onChange(+index);
 	},
 	generateTabs: function () {
 		var that = this
@@ -44,9 +46,8 @@ var TabControl = React.createClass({
 		});
 	},
 
-	componentWillUpdate: function (nextProp) {
-		var that = this
-			,selectedIndex = that.state.selectedTabIndex
+	componentWillReceiveProps: function (nextProp) {
+		var selectedIndex = nextProp.selectedTab //that.state.selectedTabIndex
 			,selectedTab
 			,isSelectedDisabled
 			,firstEnabledTab;
@@ -63,9 +64,17 @@ var TabControl = React.createClass({
 			this.setState({
 				selectedTabIndex: nextProp.data.indexOf(firstEnabledTab)
 			});
+		} else {
+			this.setState({
+				selectedTabIndex: selectedIndex
+			});
 		}
 	},
-
+	componentDidMount: function() {
+		this.setState({
+			selectedTabIndex: this.props.selectedTab
+		});
+	},
 	render: function () {
 		return (
 			<div className="tab-control">
