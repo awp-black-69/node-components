@@ -8,18 +8,26 @@ var OnOffSwitch = React.createClass({
 	},
 
 	toggleSwitch: function(e) {
-		// var isOn = e.target.classList.contains('on');
+		var isOn = e.target.classList.contains('on');
 		this.setState({
-			isOn: e.target.classList.contains('on')
+			isOn: isOn
 		});
-	},
 
-	componentDidMount: function() {
-		if(undefined != this.props.isOn) {
+		this.props.onChange(this.props.name, isOn);
+	},
+	updateSwitch: function (props) {
+		if(undefined != props.isOn) {
 			this.setState({
-				isOn: this.props.isOn
+				isOn: props.isOn
 			});
 		}
+	},
+
+	componentWillReceiveProps: function (nextProps) {
+		this.updateSwitch(nextProps);
+	},
+	componentDidMount: function() {
+		this.updateSwitch(this.props);
 	},
 	render: function () {
 		return (
