@@ -89,7 +89,7 @@ var DummySelect = React.createClass({
 
 	render: function () {
 		return (
-			<div className={"dummy-select" + (this.state.isActive ? " active" : "")} onClick={this.stopPropagation}>
+			<div className={"dummy-select" + (this.state.isActive ? " active" : "") + (this.props.position == "up" ? " position-up" : "")} onClick={this.stopPropagation}>
 				<div className="selected-item" onClick={this.toggleDropDown}>
 					<span className={"hint" + (this.state.displayText ? " has-value" : "")}>{this.state.displayText || this.props.hint || "Select"}</span>
 					<span className="icon"/>

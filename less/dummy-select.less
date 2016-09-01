@@ -3,6 +3,12 @@
 		position: relative;
 		cursor: default;
 
+		&.position-up {
+			.item-list-wrapper {
+				top: auto;
+				bottom: 100%;
+			}
+		}
 		&.active {
 			.selected-item {
 				border-color: @border-highlight;
@@ -28,7 +34,6 @@
 				}
 			}
 		}
-
 		.selected-item {
 			padding: 5px 10px;
 			position: relative;
