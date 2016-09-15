@@ -1,0 +1,48 @@
+.color-picker-mixing(@background: #FFF) {
+	.color-picker-wrapper {
+		background-color: @background;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		.picker-container {
+			display: flex;
+
+			.primary-canvas-wrapper {
+				width: 20px;
+				position: relative;
+
+				.primary-pointer {
+					width: 0;
+					height: 0;
+					border: solid;
+					border-width: 6px 6px 6px 0;
+					border-color: transparent #000;
+					position: absolute;
+					top: 0;
+					left: 10px;
+					margin-top: -6px;
+					z-index: 1;
+				}
+			}
+			.secondary-canvas-wrapper {
+				position: relative;
+
+				.secondary-pointer {
+					position: absolute;
+					border: 2px solid #FFF;
+					width: 8px;
+					height: 8px;
+					border-radius: 4px;
+					left: 0; top: 0;
+					margin: -4px;
+					-webkit-box-shadow: 0 0 2px 0 #000;
+					-moz-box-shadow: 0 0 2px 0 #000;
+					box-shadow: 0 0 2px 0 #000;
+					cursor: default;
+				}
+			}
+		}
+	}
+}

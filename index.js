@@ -1,6 +1,7 @@
 module.exports = {
 	DummyCheckbox: require('./components/dummy-checkbox.jsx'),
 	OnOffSwitch: require('./components/on-off-switch.jsx'),
+	colorPicker: require('./components/color-picker.jsx'),
 	DummySelect: require('./components/dummy-select.jsx'),
 	TabControl: require('./components/tab-control.jsx'),
 	InputText: require('./components/input-text.jsx'),

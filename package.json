@@ -1,27 +1,27 @@
 {
-  "name": "foo-lib",
-  "version": "1.2.2",
-  "description": "",
-  "main": "inedex.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://awpblack69@bitbucket.org/awpblack69/foo-lib.git"
-  },
-  "keywords": [
-    "Node"
-  ],
-  "author": "Vivek Brohma",
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
-  },
-  "license": "ISC",
-  "devDependencies": {
-    "react": "^15.2.0",
-    "underscore": "^1.8.3"
-  }
+	"name": "foo-lib",
+	"version": "1.2.2",
+	"description": "",
+	"main": "inedex.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://awpblack69@bitbucket.org/awpblack69/foo-lib.git"
+	},
+	"keywords": [
+		"Node"
+	],
+	"author": "Vivek Brohma",
+	"browserify": {
+		"transform": [
+			"reactify"
+		]
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"react": "^15.3.1",
+		"underscore": "^1.8.3"
+	}
 }
