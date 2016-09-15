@@ -55,7 +55,7 @@ function rgbToHsb(rgb) {
 	};
 }
 
-module.exports = function (React) {
+module.exports = function (React) { // This is done to bypass a react bug which arises when a react component in dependent node_module tried to use `refs`
 	var ColorPicker = React.createClass({
 		getInitialState: function () {
 			return {
