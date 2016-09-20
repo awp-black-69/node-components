@@ -17,7 +17,7 @@ Rail.prototype = {
 
 		scripts = this.data.map(function (item) {
 			try {
-				return ("window['__rail_" + item.key + "__']=" + JSON.stringify(item.value.replace('<', '&lt;')));
+				return ("window['__rail_" + item.key + "__']=" + JSON.stringify(item.value).replace('<', '&lt;'));
 			} catch (e) {
 				console.error('[Error]', e);
 			}
