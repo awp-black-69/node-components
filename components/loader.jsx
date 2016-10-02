@@ -1,7 +1,4 @@
-var React = require('react');
-
-var Loader = React.createClass({
-	render: function() {
+var Loader = function(){
 		return (
 			<div className="ajax-loader-android">
 				<div className="loader">
@@ -11,7 +8,6 @@ var Loader = React.createClass({
 				</div>
 			</div>
 		);
-	}
-});
+};
 
 module.exports = Loader;
