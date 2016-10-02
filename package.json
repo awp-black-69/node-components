@@ -1,6 +1,6 @@
 {
   "name": "foo-lib",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "main": "inedex.js",
   "scripts": {
@@ -20,7 +20,7 @@
     ]
   },
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "react": "^15.3.1",
     "reactify": "^1.1.1",
     "underscore": "^1.8.3"
