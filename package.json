@@ -1,8 +1,8 @@
 {
-  "name": "foo-lib",
+  "name": "foo-kit",
   "version": "1.2.3",
   "description": "",
-  "main": "inedex.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,18 +11,11 @@
     "url": "https://awpblack69@bitbucket.org/awpblack69/foo-lib.git"
   },
   "keywords": [
-    "Node"
+    "React UI Kit"
   ],
   "author": "Vivek Brohma",
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
-  },
   "license": "ISC",
   "dependencies": {
-    "react": "^15.3.1",
-    "reactify": "^1.1.1",
-    "underscore": "^1.8.3"
-	}
+    "react": "^16.3.2"
+  }
 }
