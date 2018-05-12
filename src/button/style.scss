@@ -1,0 +1,18 @@
+@import "../style/common";
+
+.foo-btn {
+	border: 0;
+	border-radius: $radius;
+	background: $primary-color;
+	color: $dark-theme-text-color;
+	padding: 10px 20px;
+	box-shadow: $elevation-shadow;
+	outline: none;
+
+	transition: all 0.2s ease-out;
+	
+	&:focus, &:active {
+		background: $primary-color-highlight;
+		box-shadow: $elevation-shadow-hover;
+	}
+}
