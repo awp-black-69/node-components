@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Button from '../../../src/button'
+import Button from '../../../src/button';
 
 const ButtonDemo = () => (
 	<div>
-		<Button>Ola</Button>
-	</div>	
+		<Button>Primary</Button>
+	</div>
 );
 
 export default ButtonDemo;

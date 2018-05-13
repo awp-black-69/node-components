@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Button extends Component {
-	render() {
-		return (
-			<button className="foo-btn">{this.props.children}</button>
-		);
-	}
-}
+import { children } from '../_constants/propDefinitions';
+
+const Button = props => (
+	<button className="foo-btn">{props.children}</button>
+);
+
+Button.propTypes = {
+	children,
+};
+
+Button.defaultProps = {
+	children: null,
+};
 
 export default Button;

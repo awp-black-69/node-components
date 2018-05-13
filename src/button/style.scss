@@ -1,18 +1,35 @@
-@import "../style/common";
+@import "../_style/common";
 
 .foo-btn {
+	background: $primary-color;
 	border: 0;
 	border-radius: $radius;
-	background: $primary-color;
 	color: $dark-theme-text-color;
 	padding: 10px 20px;
+	position: relative;
 	box-shadow: $elevation-shadow;
 	outline: none;
-
 	transition: all 0.2s ease-out;
 	
+	&:after {
+		background: $primary-color-ripple;
+		border-radius: 50%;
+		content: '';
+		display: inline-block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		transition: all 0.2s ease-out, border-radius 0.5s ease-out;
+		width: 100%;
+		top: 0;
+		transform: scale3d(0,0,0);
+	}
+	&:focus:after, &:active:after, &:hover:after {
+		border-radius: 0;
+		opacity: 1;
+		transform: scale3d(1,1,1);
+	}
 	&:focus, &:active {
-		background: $primary-color-highlight;
 		box-shadow: $elevation-shadow-hover;
 	}
 }
